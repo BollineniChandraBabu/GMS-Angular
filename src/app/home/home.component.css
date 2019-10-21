@@ -1,0 +1,9 @@
+#index {
+    background-image: url(E:\GMS-project\GradeManagementSystem-frontend\src\main\webapp\images\gms.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 1;
+    filter: alpha(opacity=30);
+}
