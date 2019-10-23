@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   
 }}
 
-export class NgbdModalLogin {
+export class AppLogin {
   closeResult: string;
 
   constructor(private modalService: NgbModal) {}
