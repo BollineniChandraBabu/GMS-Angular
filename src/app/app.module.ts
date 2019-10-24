@@ -8,6 +8,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import {NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { StudentBlogComponent } from './student-blog/student-blog.component';
+import { ActivateAccountComponent } from './activate-account/activate-account.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,14 +21,20 @@ import {NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     FooterComponent,
     HomeComponent,
-    ContactusComponent
+    ContactusComponent,
+    StudentBlogComponent,
+    ActivateAccountComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-   NgbModule
+   NgbModule,
+   ModalModule.forRoot(), 
+   PopoverModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[LoginComponent]
 })
 export class AppModule { }

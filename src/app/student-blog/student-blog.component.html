@@ -1,0 +1,44 @@
+<div class=container>
+    <div id='accordion'>
+        <div class='card'>
+            <div class='card-header'>
+                <a class='card-link' data-toggle='collapse'>Examination Information Center</a>
+            </div>
+            <div id='collapseOne' class='collapse show' data-parent='#accordion'>
+                <div class='card-body'>
+                    <form method="post" onsubmit="checkCaptcha()" align="center">
+                        <div class="form-group">
+                            Enter Hall Ticket Number:
+                            <input type="number" class="form-control" name="student_id" id="studentid" placeholder="Enter Hall Ticket Number" required="required" maxlength=10>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div id="captcha" align="center"></div>
+                                    <div class="col-sm">
+                                        <input type='button' class='btn btn-primary btn-xs' (click)='generateRandomString()' value='re captcha'>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" name="random" id="random" placeholder="Enter Captcha" required="required">
+                        </div>
+
+
+                        <div class="form-group" align=center>
+                            <button type="submit" class="btn btn-primary btn-xs">Search</button> &nbsp;
+                            <button type="reset" class="btn btn-primary btn-xs" onclick="clearData()">clear</button>
+                        </div>
+                    </form>
+                    <div id="viewmarks" align="center"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="panel panel-default" align=center style="color: blue;">
+        <div class="panel-body">Any discrepancy in the result noted above must be brought to the notice of the Controller of Examinations.</div>
+    </div>
+</div>
