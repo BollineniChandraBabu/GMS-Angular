@@ -3,6 +3,8 @@ import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrie
 import { LoginComponent } from './login/login.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+declare var jquery:any;
+declare var $ :any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

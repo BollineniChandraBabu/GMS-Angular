@@ -8,12 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import {NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { StudentBlogComponent } from './student-blog/student-blog.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
-
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+declare var jquery:any;
+declare var $ :any;
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,7 @@ import { ActivateAccountComponent } from './activate-account/activate-account.co
     ContactusComponent,
     StudentBlogComponent,
     ActivateAccountComponent,
+    AdminLoginComponent,
     
   ],
   imports: [
@@ -31,7 +35,9 @@ import { ActivateAccountComponent } from './activate-account/activate-account.co
     AppRoutingModule,
    NgbModule,
    ModalModule.forRoot(), 
-   PopoverModule.forRoot()
+   PopoverModule.forRoot(),
+   HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

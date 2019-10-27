@@ -1,38 +1,37 @@
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-        Launch
-      </button>
-
-<!-- Modal -->
-<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-login">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
+                <h4 class="modal-title">Activate Account</h4>
+                <button type="button" class="close" data-dismiss="modal"
+                    aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <div id="activatemsg" align=center style="color: red;"></div>
                 <form method="post" onsubmit="activateEmployee()">
                     <div class="form-group">
-                        <input type="number" class="form-control" name="eid" id="eid" placeholder="Employee ID" required="required">
+                        <input type="number" class="form-control" name="eid"
+                            id="eid" placeholder="Employee ID" required="required">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="email" required="required" onfocusout="checkEmail()">
+                        <input type="email" class="form-control" name="email" id="email"
+                            placeholder="email" required="required" onfocusout="checkEmail()">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" name="password" id="password" placeholder="password" required="required" onfocus="checkdetails()">
+                        <input type="password" class="form-control" name="password" id="password"
+                            placeholder="password" required="required" onfocus="checkdetails()">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="confirm password" required="required" onkeyup="checkpassword()">
+                        <input type="password" class="form-control" name="cpassword" id="cpassword"
+                            placeholder="confirm password" required="required" onfocusout="checkpassword()">
                     </div>
                     <div class="form-group" align=center>
-                        <button type="submit" id="activate" class="btn btn-primary btn-xs" disabled>activate</button> &nbsp;
+                        <button type="submit" class="btn btn-primary btn-xs">activate</button>
+                        &nbsp;
                         <button type="reset" class="btn btn-primary btn-xs">clear</button>
-                    </div>
+                    </div>					
                 </form>
-            </div>
+            </div>			
         </div>
     </div>
 </div>
