@@ -6,12 +6,9 @@ import { getMaxListeners } from 'cluster';
   providedIn: 'root'
 })
 export class UsersService {
-  serverUrl = "http://localhost:9000/"
+  serverUrl = "http://localhost:9000/login?"
   constructor(private http: HttpClient) { }
-  login(email:string,password:string){
-    let url = this.serverUrl + "/login?email=chandra@gmail.com&password=chandra";
-    var result;
-    let user = { "email": email, "password": password};
-    return this.http.get(url);
+  login(formData:any):any{
+    return this.http.get(this.serverUrl+"email="+formData.email+"&password="+formData.password);
   }
 }

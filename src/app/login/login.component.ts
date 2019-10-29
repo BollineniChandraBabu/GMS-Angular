@@ -17,12 +17,12 @@ import { FormsModule } from '@angular/forms';
 
 export class LoginComponent implements OnInit {
   modalRef: BsModalRef;
-  private usersService:UsersService;
   email:string;
   password:string;
   constructor(
     private modalService: NgbModal,
-    private router:Router
+    private router:Router,
+    private usersService:UsersService
     ) {}
   ngOnInit() {
   this.msg();
@@ -31,13 +31,28 @@ export class LoginComponent implements OnInit {
   {  
     $("#myModal").modal();
   }  
-  loginmethod()
+  login()
   {
-    event.preventDefault;
-    console.log("Login:", this.email, this.password);
-   // this.usersService.login(this.email, this.password).subscribe ( (res)=>{
-     // console.log(res);
-   // });
-   this.router.navigate(['adminLogin']);
+    let formData:any={
+      'email':this.email,
+      'password':this.password
+     };
+     this.usersService.login(formData).subscribe((res)=>{
+      console.log(JSON.stringify(res));
+     
+      var data=res;
+      if(data!=null){
+        localStorage.setItem("user",JSON.stringify(res));
+     // this.router.navigate(['adminfeature']);
+    }
+      else
+      {
+       alert("Access Denied!Invalid credentials");
+        document.getElementById("messageBody").innerHTML="Access Denied! Invalid credentials";
+      }
+     },(err)=>
+     {
+     console.log('error=>'+JSON.stringify(err.error.message));
+     });
   }
 }
