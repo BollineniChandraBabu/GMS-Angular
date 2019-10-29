@@ -18,11 +18,12 @@ import { FormsModule } from '@angular/forms';
 export class LoginComponent implements OnInit {
   modalRef: BsModalRef;
   private usersService:UsersService;
-  private router:Router
   email:string;
   password:string;
-
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal,
+    private router:Router
+    ) {}
   ngOnInit() {
   this.msg();
   }
@@ -30,13 +31,13 @@ export class LoginComponent implements OnInit {
   {  
     $("#myModal").modal();
   }  
-  login()
+  loginmethod()
   {
     event.preventDefault;
     console.log("Login:", this.email, this.password);
    // this.usersService.login(this.email, this.password).subscribe ( (res)=>{
      // console.log(res);
    // });
-   this.router.navigate(['home']);
+   this.router.navigate(['adminLogin']);
   }
 }
